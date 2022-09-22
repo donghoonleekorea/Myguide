@@ -1,6 +1,6 @@
 # Step by step
 
-*Already have locally installed [MongoDB] and installed [ThunderClient] in [VSCode]
+*Already have locally installed [Node.js],[MongoDB] and installed [ThunderClient] in [VSCode]
 
 1. Make an empty repository with app's name in [Github] and clone it to my laptop
 
@@ -54,7 +54,7 @@
 
 5. Create 'server' folder through [VSCode]
 6. Initialize npm using 'npm init' from [terminal]
-7. Add necessary dependencies : [bycrpt], [cors], [express], [express-session], [mongoose]
+7. Add necessary dependencies : [bcyrpt], [cors], [express], [express-session], [mongoose]
 8. Create 'index.js', 'router.js', 'db.js' files inside the 'server' folder
 9. Inside the 'server' folder create models folder and inside 'tour.js', 'user.js'
 10. Inside the 'server' folder create controllers folder and inside 'tour.js', 'user.js'

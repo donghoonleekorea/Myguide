@@ -8,4 +8,4 @@ Language ->  [Javascript]  / Editor -> [VSCode] and its extension [ThunderClient
 For front-end -> [React], [Redux] / For back-end -> [Node.js], [Express], [MongoDB], [Mongoose]
 For version control [Github]
 To visualize structure of each page and component -> [Excalidraw]
-Dependencies -> [bycrpt], [cors], [express], [express-session], [mongoose]
+Dependencies -> [bcrypt], [cors], [express], [express-session], [mongoose]
