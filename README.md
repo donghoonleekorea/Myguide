@@ -1,6 +1,6 @@
 # My Guide
 
-This is my first Full stack solo project from scratch. I'll to make an simple web app where people can authenticate and get access to audio guide files if they buy it. In short words is an audio guide platform. (Payment system will be included in the last step if it is possible)
+This is my first Full stack solo project from scratch. I'll make an simple web app where people can authenticate and get access to audio guide files if they buy it. In short words, it is an audio guide platform. (Payment system will be included in the last step if it is possible)
 
 ## Tools
 I'll basically use MERN :

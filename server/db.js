@@ -5,9 +5,9 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) {
-      console.log(`😞 Sorry, something went wrong! ${err}`);
+      console.log(`😞 Sorry, something went wrong [DB CONNECTION]! ${err}`);
     } else {
-      console.log(`🦆 Database (sessions) connected @ port 27017!`);
+      console.log(`🦆 Database connected @ port 27017!`);
     }
   } 
 );
