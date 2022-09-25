@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const session = require('express-session');
 const router = require('./router');
+const session = require('express-session');
 
 const corsConfig = {
-  origin: 'http://localhost:3010',
+  origin: 'http://localhost:3000',
   credentials: true,
 };
 

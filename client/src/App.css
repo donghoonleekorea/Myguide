@@ -1,0 +1,108 @@
+.App {
+  display: flex;
+  justify-content: center;
+
+}
+
+.container {
+  width: 370px;
+}
+
+.header-container {
+  position: fixed;
+  z-index: 9;
+}
+
+.headerBar {
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+}
+
+.headerLogo {
+  width: 15%;
+  padding: 4% 0;
+  margin-left: 5%;
+}
+
+.searchBox {
+  width: 50%;
+  margin: 2% 5% 2% 0;
+  font-size: 70%;
+  border: none;
+  border-radius: 25px;
+}
+
+.navBar {
+  max-width: 475px;
+  display: flex;
+  justify-content: space-around;
+  text-decoration:none;
+  border: solid blanchedalmond;
+  background-color: white;
+  padding: 2% 0 ;
+}
+
+.link {
+  color: rgb(238, 127, 17);
+  text-decoration: none;
+  
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 600px;
+}
+
+.registerForm input {
+  margin: 7% 0;
+  height: 4%;
+}
+
+.audioPlayer {
+  width: 85%;
+  height: 30px;
+  margin-top: 2%;
+  z-index: 1;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+/* .homeIcon, .mypageIcon, .couponIcon, .userIcon {
+  width: 20%; */
+
+
+
+

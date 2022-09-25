@@ -59,4 +59,8 @@
 9. Inside the 'server' folder create models folder and inside 'tour.js', 'user.js'
 10. Inside the 'server' folder create controllers folder and inside 'tour.js', 'user.js'
 11. Inside the 'server' folder create middlewares folder and inside 'auth.js'
+12. From root folder, npx create-react-app client
+13. change directory to client and npm start
+14. remove code from app.js and app.css
+
 

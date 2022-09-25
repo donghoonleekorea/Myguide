@@ -35,9 +35,8 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    console.log({user});
+    // console.log({user});
     const validatedPass = await bcrypt.compare(password, user.password);
-    
     if (!validatedPass) throw new Error();
     req.session.uid = user._id;
     res.status(200).send(user);
@@ -47,24 +46,11 @@ const login = async (req, res) => {
 
 };
 
-const logout = (req, res) => {
-
-  req.session.destroy((err) => {
-    if (err) {
-      res.status(500).send({ err, message: 'Could not log out, please try again' });
-    } else {
-      res.clearCookie('sid');
-      res.status(200).send({ message: 'Logout successful' });
-    }
-  })
-
-};
-
 const profile = (req, res) => {
-
+  console.log('user: ', req.user);
   try {
-    const { _id, email, firstName, lastName } = req.user;
-    const user = { _id, email, firstName, lastName };
+    const { _id, firstName, lastName } = req.user;
+    const user = { _id, firstName, lastName };
     res.status(200).send(user);
   } catch (err) {
     res.status(404).send({ err, message: 'User not found' });
@@ -72,4 +58,19 @@ const profile = (req, res) => {
 
 };
 
-module.exports = { register, test, login, logout, profile };
+// const logout = (req, res) => {
+
+//   req.session.destroy((err) => {
+//     if (err) {
+//       res.status(500).send({ err, message: 'Could not log out, please try again' });
+//     } else {
+//       res.clearCookie('sid');
+//       res.status(200).send({ message: 'Logout successful' });
+//     }
+//   })
+
+// };
+
+
+
+module.exports = { register, test, login, profile };
