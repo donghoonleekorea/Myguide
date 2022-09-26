@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import apiService from '../ApiServices'
+import React from 'react';
 
 
 const Tour = ({tour}) => {

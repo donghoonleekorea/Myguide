@@ -1,10 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import apiService from '../ApiServices'
 import Tour from './Tour';
-// import guide from "../assets/audio/barcelona_RickSteves_SFamilia.mp3";
-// import image from "../assets/tour/coloseum.jpeg"
-let image = "coloseum.jpeg"
-let guide = "sagradaFamilia.mp3"
+
 
 const Home = () => {
 
