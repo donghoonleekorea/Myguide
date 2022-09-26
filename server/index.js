@@ -24,7 +24,7 @@ app.use(
       sameSite: true,
       httpOnly: false,
       // we would want to set secure=true in a production environment
-      secure: true,
+      secure: false,
     },
   })
 );

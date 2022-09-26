@@ -12,14 +12,23 @@ const Home = () => {
 
   useEffect(() => {
     apiService.getTours().then(tourList => setTours(tourList));
-  })
+  },[])
 
   return (
     <div>
+      <div className="header-bottom-margin"></div>
+      <div className="tourList">
         {tours.map((tour) => 
-          <Tour tour={tour} key={tour.id} />
+           <Tour tour={tour} key={tour._id} />
         )}
+      </div>
+      <div className="tourList">
+        {tours.map((tour) => 
+          <Tour tour={tour} key={tour._id} />
+        )}
+      </div>
     </div>
+    
   )
 
 }

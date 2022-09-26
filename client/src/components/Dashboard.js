@@ -11,12 +11,12 @@ const Dashboard = ({ isAuthenticated ,setIsAuthenticated }) => {
     <div className="dashboard">
       <Routes>
         <Route
-          path="/register"
-          element={<Register setIsAuthenticated={setIsAuthenticated}/>}
-        />
-        <Route
           path="/"
           element={<Home />}
+        />
+        <Route
+          path="/register"
+          element={<Register setIsAuthenticated={setIsAuthenticated}/>}
         />
         <Route
           path="/profile"

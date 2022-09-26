@@ -26,6 +26,10 @@
   margin-left: 5%;
 }
 
+.header-bottom-margin {
+  margin-top: 30%;
+}
+
 .searchBox {
   width: 50%;
   margin: 2% 5% 2% 0;
@@ -63,7 +67,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 25%;
 }
 
 .registerForm {
@@ -78,10 +82,14 @@
   height: 4%;
 }
 
+.form-submit {
+  margin-top: 40%;
+}
+
 .audioPlayer {
-  width: 85%;
+  width: 150px;
   height: 30px;
-  margin-top: 2%;
+  margin: 2% 0;
   z-index: 1;
 }
 
@@ -100,9 +108,58 @@
   align-items: center;
   margin-top: 25%;
 }
-/* .homeIcon, .mypageIcon, .couponIcon, .userIcon {
-  width: 20%; */
 
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 600px;
+}
+
+.form input {
+  margin: 7% 0;
+  height: 4%;
+}
+
+
+.tourList {
+  display: flex;
+  overflow-x: scroll;
+  margin: 5% 0;
+  
+}
+
+.tour {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0 0 0 4%;
+  /* width: 20%; */
+}
+
+.tourTitle {
+  height: 32px;
+}
+
+.tourTitle h1 {
+  font-size: 70%;
+}
+
+
+.tour p {
+  font-size: 50%;
+}
+
+.tourImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.tourImg img {
+  height: 100px;
+}
 
 
 

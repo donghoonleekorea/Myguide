@@ -38,7 +38,8 @@ const login = async (req, res) => {
     // console.log({user});
     const validatedPass = await bcrypt.compare(password, user.password);
     if (!validatedPass) throw new Error();
-    req.session.uid = user._id;
+    req.session.uid = user._id.toString();
+    console.log(req.session.uid.toString());
     res.status(200).send(user);
   } catch (err) {
     res.status(401).send({ error: '401', message: 'Username or password is incorrect' });

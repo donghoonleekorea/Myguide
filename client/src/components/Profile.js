@@ -14,6 +14,7 @@ const Profile = ({isAuthenticated}) => {
   useEffect(() => {
     const getProfile = async () => {
       const userInfo = await apiService.profile();
+      console.log(userInfo)
       if (userInfo) {
         const { firstName, lastName } = userInfo;
         setState((prevState) => {
