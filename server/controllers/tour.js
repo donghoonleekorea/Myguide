@@ -39,4 +39,5 @@ const deleteALL = async (req, res) => {
 }
 
 
+
 module.exports = { createNewTour, getTours, deleteALL };

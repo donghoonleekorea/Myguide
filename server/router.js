@@ -6,8 +6,9 @@ const authMiddleware = require('./middlewares/auth');
 router.post('/register', userController.register);
 router.get('/test', userController.test);
 router.post('/login', userController.login);
-// router.post('/logout', userController.logout);
+router.post('/logout', authMiddleware, userController.logout);
 router.get('/profile', authMiddleware, userController.profile);
+router.put('/updateUserTours', userController.updateUserTours);
 
 router.post('/createNewTour', tourController.createNewTour);
 router.get('/getTours', tourController.getTours);

@@ -3,6 +3,7 @@ import apiService from './../ApiServices';
 const initialState = {
   firstName: '',
   lastName: '',
+  savedTours: []
 };
 
 const Profile = ({isAuthenticated}) => {
@@ -10,18 +11,20 @@ const Profile = ({isAuthenticated}) => {
 
   const firstName = state.firstName || 'Missing';
   const lastName = state.lastName || 'No.';
+  const savedTours = state.savedTours || [];
 
   useEffect(() => {
     const getProfile = async () => {
       const userInfo = await apiService.profile();
       console.log(userInfo)
       if (userInfo) {
-        const { firstName, lastName } = userInfo;
+        const { firstName, lastName, savedTours } = userInfo;
         setState((prevState) => {
           return {
             ...prevState,
             firstName,
             lastName,
+            savedTours,
           };
         });
       } else {
@@ -33,15 +36,18 @@ const Profile = ({isAuthenticated}) => {
 
   return (
     <section className="profile">
-      <h2>My Profile</h2>
+      
         {isAuthenticated ? (
-        <h3> 
-          Hi {firstName} {lastName}, let's explore the world
-        </h3>
+          <>
+            <h2>Hi {firstName} {lastName}</h2>
+            <h3> 
+            Let's explore the world <br></br>TOGETHER!
+            </h3>
+          </>
         ) : (
           <h3> 
           Please, create your account or login
-        </h3>
+          </h3>
         )}
         
         

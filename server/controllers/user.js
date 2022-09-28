@@ -50,8 +50,8 @@ const login = async (req, res) => {
 const profile = (req, res) => {
   console.log('user: ', req.user);
   try {
-    const { _id, firstName, lastName } = req.user;
-    const user = { _id, firstName, lastName };
+    const { _id, firstName, lastName, savedTours } = req.user;
+    const user = { _id, firstName, lastName, savedTours };
     res.status(200).send(user);
   } catch (err) {
     res.status(404).send({ err, message: 'User not found' });
@@ -59,19 +59,33 @@ const profile = (req, res) => {
 
 };
 
-// const logout = (req, res) => {
+const logout = (req, res) => {
 
-//   req.session.destroy((err) => {
-//     if (err) {
-//       res.status(500).send({ err, message: 'Could not log out, please try again' });
-//     } else {
-//       res.clearCookie('sid');
-//       res.status(200).send({ message: 'Logout successful' });
-//     }
-//   })
+  req.session.destroy((err) => {
+    if (err) {
+      res.status(500).send({ err, message: 'Could not log out, please try again' });
+    } else {
+      res.clearCookie('sid');
+      res.status(200).send({ message: 'Logout successful' });
+    }
+  })
 
-// };
+};
+
+
+const updateUserTours = async (req, res) => {
+
+  const { _id, savedTours} = req.user;
+
+  try {
+    let user = await User.findOneAndUpdate({ _id }, { savedTours}, {returnOriginal: false});
+    res.status(200).send(user)
+  } catch (err) {
+    res.status(500). send( {err, message: 'Could not find and update user savedTours property'});
+  }
+
+}
 
 
 
-module.exports = { register, test, login, profile };
+module.exports = { register, test, login, profile, logout, updateUserTours };

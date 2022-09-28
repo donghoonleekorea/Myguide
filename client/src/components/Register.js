@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import auth from '../utils/auth';
 import apiService from './../ApiServices';
 import { useNavigate } from 'react-router-dom';
 
@@ -34,7 +33,6 @@ const Register = (props) => {
       setState(initialState);
     } else {
       props.setIsAuthenticated(true);
-      auth.login(() => navigate('/profile'));
       navigate('/profile')
     }
   };

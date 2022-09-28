@@ -17,6 +17,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  savedTours: []
 });
 
 module.exports = mongoose.model('User', userSchema);

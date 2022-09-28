@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import auth from '../utils/auth';
 import apiService from './../ApiServices';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +32,7 @@ const Login = (props) => {
     } else {
 
       props.setIsAuthenticated(true);
-      auth.login(() => navigate('/profile'));
+      navigate('/profile');
 
     }
 
@@ -49,14 +48,14 @@ const Login = (props) => {
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="name@mail.com"
+          placeholder="Email"
           name="email"
           value={state.email}
           onChange={handleChange}
         />
         <input
           type="password"
-          placeholder="supersecretthingy"
+          placeholder="Password"
           name="password"
           value={state.password}
           onChange={handleChange}

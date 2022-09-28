@@ -1,32 +1,41 @@
 import React from 'react';
-import logo from  "../assets/myGuideLogo.png";
-import homeLogo from  "../assets/home.png";
-import labelLogo from  "../assets/label.png";
-import coupon from  "../assets/coupon.png";
-import userLogo from  "../assets/user.png";
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+
+const Header = ({ isAuthenticated, setIsSearched }) => {
+
 
   return (
     <div className="header-container">
       <div className="headerBar">
-        <img className="headerLogo" src={logo} alt="logo"></img>
-        <input className="searchBox" placeholder='    Country or City'></input>
+        <img className="headerLogo" src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/myGuideLogo.png' alt="logo"></img>
+        <input className="searchBox" type='text' onChange={e => setIsSearched((e.target.value).toLowerCase())} placeholder='    Country or City'>
+        </input>
       </div>
       <div className="nav-container">
         <div className="navBar">
-          <Link className="link" to="/">Home</Link>
-          {/* <img className="homeIcon" src={homeLogo} alt="logo"></img> */}
-
-          <Link className="link" to="/profile">My Page</Link>
-          {/* <img className="mypageIcon" src={labelLogo} alt="logo"></img> */}
-
-          <Link className="link" to="/register">Register</Link>
-          {/* <img className="couponIcon" src={coupon} alt="logo"></img> */}
-
-          <Link className="link" to="/login">Login</Link>
-          {/* <img className="userIcon" src={userLogo} alt="logo"></img> */}
+          <Link className="link" to="/">
+            <img className="homeIcon" src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/home.png' alt="logo"></img>
+          </Link>
+          { isAuthenticated ? (
+          <>
+            <Link className="link" to="/profile">
+              <img className="mypageIcon" src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/list.png' alt="logo"></img>
+            </Link>
+            <Link className='link' to='/logout'>
+              <img className='logoutIcon' src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/logout.png' alt='logo'></img>
+            </Link>
+          </>
+          ) : (
+          <>
+            <Link className="link" to="/register">
+              <img className="registerIcon" src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/register.png' alt="logo"></img>
+            </Link>
+            <Link className="link" to="/login">
+              <img className="loginIcon" src='https://myguidefirstsoloproject2022codeworks.s3.eu-central-1.amazonaws.com/assets/login.png' alt="logo"></img>
+            </Link>
+          </>
+          )}         
         </div>
       </div>
     </div>

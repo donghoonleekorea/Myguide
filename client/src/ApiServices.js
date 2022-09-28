@@ -2,9 +2,9 @@ const base_URL = 'http://localhost:3010';
 
 const apiService = {};
 
-apiService.register = (user) => {
+apiService.register = async (user) => {
   
-  return fetch(`${base_URL}/register`, {
+  return await fetch(`${base_URL}/register`, {
     method: 'POST',
     credentials: 'include',
     mode: 'cors',
@@ -27,9 +27,9 @@ apiService.test = async () => {
 
 };
 
-apiService.login = (user) => {
+apiService.login = async (user) => {
   
-  return fetch(`${base_URL}/login`, {
+  return await fetch(`${base_URL}/login`, {
     method: 'POST',
     credentials: 'include',
     mode: 'cors',
@@ -41,9 +41,9 @@ apiService.login = (user) => {
   
 };
 
-apiService.profile = () => {
+apiService.profile = async () => {
   
-  return fetch(`${base_URL}/profile`, {
+  return await fetch(`${base_URL}/profile`, {
     method: 'GET',
     credentials: 'include',
     mode: 'cors',
@@ -54,9 +54,9 @@ apiService.profile = () => {
   
 };
 
-apiService.getTours = () => {
+apiService.getTours = async () => {
 
-  return fetch(`${base_URL}/getTours`, {
+  return await fetch(`${base_URL}/getTours`, {
     method: 'GET',
     credentials: 'include',
     mode: 'cors',
@@ -67,17 +67,31 @@ apiService.getTours = () => {
 
 }
 
-// apiService.logout = () => {
+apiService.logout = async () => {
   
-//   return fetch(`${base_URL}/logout`, {
-//     method: 'POST',
-//     credentials: 'include',
-//     mode: 'cors',
-//     headers: { 'Content-Type': 'application/json' },
-//   })
-//     .then((res) => res.json())
-//     .catch((err) => console.log(err));
+  return await fetch(`${base_URL}/logout`, {
+    method: 'POST',
+    credentials: 'include',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
   
-// };
+};
+
+apiService.updateUserTours = async (user) => {
+  
+  return await fetch(`${base_URL}/updateUserTours`, {
+    method: 'PUT',
+    credentials: 'include',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+    // body: JSON.stringify(user),
+  })
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+  
+};
 
 export default apiService;
